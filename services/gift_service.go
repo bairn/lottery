@@ -19,7 +19,7 @@ type GiftService interface {
 	Delete(id int) error
 	Update(data *models.LtGift, columns []string) error
 	Create(data *models.LtGift) error
-	//GetAllUse(useCache bool) []models.ObjGiftPrize
+	GetAllUse(useCache bool) []models.ObjGiftPrize
 	IncrLeftNum(id, num int) (int64, error)
 	DecrLeftNum(id, num int) (int64, error)
 }
@@ -30,7 +30,7 @@ type giftService struct {
 
 func NewGiftService() GiftService {
 	return &giftService{
-		dao:dao.NewGiftDao(nil),
+		dao:dao.NewGiftDao(datasource.InstanceDbMaster()),
 	}
 }
 

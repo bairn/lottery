@@ -2,26 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1640e24-b9bb-4e43-b432-3ec24ce60951" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bootstrap/bootstrapper.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/comm/functions.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/project.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/redis.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/blackip_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/code_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/gift_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/result_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/user_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/userday_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasource/dbhelper.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasource/rdshelper.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/obj_gift_prize.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/obj_loginuser.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gift_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comm/func_web.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/run_all.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/run_one.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/backip_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/code_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/result_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/user_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/userday_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/controllers/admin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/controllers/index.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/middleware/basicauth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/middleware/identity/identity.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/public/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/routes/routes.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/viewmodels/view_gift.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/views/shared/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/views/shared/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/bootstrapper.go" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/bootstrapper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/conf/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/gift_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/gift_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasource/rdshelper.go" beforeDir="false" afterPath="$PROJECT_DIR$/datasource/rdshelper.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gift_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/gift_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,25 +75,21 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/public" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/views/shared" />
       <recent name="$PROJECT_DIR$/demo/redPacket/safe2" />
       <recent name="$PROJECT_DIR$/demo/redPacket/safe" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build lottery/demo/threadsafe (2)">
-    <configuration name="go build lottery/_demo/5weiboRedPacket" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="lottery" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/_demo/5weiboRedPacket/main.go" />
-      <package value="lottery/_demo/5weiboRedPacket" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build lottery/web">
     <configuration name="go build lottery/demo/redPacket" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="lottery" />
       <working_directory value="$PROJECT_DIR$" />
@@ -124,13 +126,22 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build lottery/web" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="lottery" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/web/main.go" />
+      <package value="lottery/web" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build lottery/web" />
         <item itemvalue="Go Build.go build lottery/demo/threadsafe (2)" />
         <item itemvalue="Go Build.go build lottery/demo/threadsafe (1)" />
         <item itemvalue="Go Build.go build lottery/demo/threadsafe" />
         <item itemvalue="Go Build.go build lottery/demo/redPacket" />
-        <item itemvalue="Go Build.go build lottery/_demo/5weiboRedPacket" />
       </list>
     </recent_temporary>
   </component>
@@ -162,6 +173,10 @@
       <screen x="35" y="23" width="1405" height="877" />
     </state>
     <state x="861" y="429" key="#com.intellij.fileTypes.FileTypeChooser/35.23.1405.877@35.23.1405.877" timestamp="1588256919865" />
+    <state x="475" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588958326808">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="475" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/35.23.1405.877@35.23.1405.877" timestamp="1588958326808" />
     <state x="858" y="133" key="#go_build_lottery/demo/threadsafe" timestamp="1588276299800">
       <screen x="35" y="23" width="1405" height="877" />
     </state>
@@ -174,25 +189,34 @@
       <screen x="35" y="23" width="1405" height="877" />
     </state>
     <state x="446" y="104" key="#go_build_lottery/demo/threadsafe_(2)/35.23.1405.877@35.23.1405.877" timestamp="1588276525188" />
-    <state width="1363" height="371" key="GridCell.Tab.0.bottom" timestamp="1588280250369">
+    <state width="1363" height="319" key="GridCell.Tab.0.bottom" timestamp="1588958686866">
       <screen x="35" y="23" width="1405" height="877" />
     </state>
-    <state width="1363" height="371" key="GridCell.Tab.0.bottom/35.23.1405.877@35.23.1405.877" timestamp="1588280250369" />
-    <state width="1363" height="371" key="GridCell.Tab.0.center" timestamp="1588280250368">
+    <state width="1363" height="319" key="GridCell.Tab.0.bottom/34.23.1406.877@34.23.1406.877" timestamp="1588957471204" />
+    <state width="1363" height="319" key="GridCell.Tab.0.bottom/35.23.1405.877@35.23.1405.877" timestamp="1588958686866" />
+    <state width="1363" height="319" key="GridCell.Tab.0.center" timestamp="1588958686865">
       <screen x="35" y="23" width="1405" height="877" />
     </state>
-    <state width="1363" height="371" key="GridCell.Tab.0.center/35.23.1405.877@35.23.1405.877" timestamp="1588280250368" />
-    <state width="1363" height="371" key="GridCell.Tab.0.left" timestamp="1588280250368">
+    <state width="1363" height="319" key="GridCell.Tab.0.center/34.23.1406.877@34.23.1406.877" timestamp="1588957471203" />
+    <state width="1363" height="319" key="GridCell.Tab.0.center/35.23.1405.877@35.23.1405.877" timestamp="1588958686865" />
+    <state width="1363" height="319" key="GridCell.Tab.0.left" timestamp="1588958686856">
       <screen x="35" y="23" width="1405" height="877" />
     </state>
-    <state width="1363" height="371" key="GridCell.Tab.0.left/35.23.1405.877@35.23.1405.877" timestamp="1588280250368" />
-    <state width="1363" height="371" key="GridCell.Tab.0.right" timestamp="1588280250369">
+    <state width="1363" height="319" key="GridCell.Tab.0.left/34.23.1406.877@34.23.1406.877" timestamp="1588957471202" />
+    <state width="1363" height="319" key="GridCell.Tab.0.left/35.23.1405.877@35.23.1405.877" timestamp="1588958686856" />
+    <state width="1363" height="319" key="GridCell.Tab.0.right" timestamp="1588958686866">
       <screen x="35" y="23" width="1405" height="877" />
     </state>
-    <state width="1363" height="371" key="GridCell.Tab.0.right/35.23.1405.877@35.23.1405.877" timestamp="1588280250369" />
+    <state width="1363" height="319" key="GridCell.Tab.0.right/34.23.1406.877@34.23.1406.877" timestamp="1588957471203" />
+    <state width="1363" height="319" key="GridCell.Tab.0.right/35.23.1405.877@35.23.1405.877" timestamp="1588958686866" />
     <state x="246" y="100" key="SettingsEditor" timestamp="1588300320776">
       <screen x="35" y="23" width="1405" height="877" />
     </state>
     <state x="246" y="100" key="SettingsEditor/35.23.1405.877@35.23.1405.877" timestamp="1588300320776" />
+    <state x="416" y="218" width="667" height="486" key="find.popup" timestamp="1588957898700">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="415" y="218" width="668" height="486" key="find.popup/34.23.1406.877@34.23.1406.877" timestamp="1588953355862" />
+    <state x="416" y="218" width="667" height="486" key="find.popup/35.23.1405.877@35.23.1405.877" timestamp="1588957898700" />
   </component>
 </project>

@@ -5,8 +5,8 @@ package dao
 
 import (
 	"github.com/go-xorm/xorm"
-	"lottery/models"
 	"lottery/comm"
+	"lottery/models"
 )
 
 type GiftDao struct {
